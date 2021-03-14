@@ -8,12 +8,13 @@ import java.util.List;
 
 @Getter
 @Setter
+@Entity
 @Table(name = "users")
 public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private long id;
     private String name;
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "user")
     private List<Reservation> reservationList;
 }
